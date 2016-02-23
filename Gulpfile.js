@@ -2,7 +2,16 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     watch = require('gulp-watch'),
     sourcemaps = require('gulp-sourcemaps'),
-    cssnano = require('gulp-cssnano');
+    cssnano = require('gulp-cssnano'),
+    argv = require('yargs').argv,
+    gulpif = require('gulp-if');
+
+var isProduction;
+if(argv.prod) {
+    isProduction = true;
+} else {
+    isProduction = false;
+}
 
 var config = {
     scssDir: './assets/scss',
@@ -14,8 +23,7 @@ gulp.task('style', function(){
     .pipe(sourcemaps.init())
     .pipe(sass())
     .on('error', sass.logError)
-    .pipe(cssnano())
-    .pipe(sourcemaps.write('maps'))
+    .pipe(gulpif(isProduction, cssnano(), sourcemaps.write('maps')))
     .pipe(gulp.dest(config.cssDir))
 });
 
