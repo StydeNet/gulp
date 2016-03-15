@@ -15,3 +15,5 @@ Algunos de los comandos que utilizamos en este primer video son
     $npm install <paquete> —save
 
 No dudes en dejar tus comentarios aquí o en nuestro canal de Slack para solicitar ayuda, aclarar dudas o simplemente opinar sobre el curso.
+
+Los iconos utilizados en las muestras son cortesia de https://roundicons.com. Las demas imagenes son de mi propia autoria.
