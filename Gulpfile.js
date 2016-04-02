@@ -10,7 +10,8 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     del = require('del'),
     browserify = require('browserify'),
-    transform = require('vinyl-source-stream');
+    transform = require('vinyl-source-stream'),
+    sync = require('browser-sync').create();
 
 var isProduction;
 if(argv.prod) {
@@ -33,6 +34,7 @@ gulp.task('style', function(){
     .on('error', sass.logError)
     .pipe(gulpif(isProduction, cssnano(), sourcemaps.write('maps')))
     .pipe(gulp.dest(config.cssDir))
+    .pipe(sync.stream())
 });
 
 gulp.task('concat', function(){
@@ -73,8 +75,24 @@ gulp.task('browserify', function(){
     .pipe(gulp.dest(config.jsDir + '/min/'))
 });
 
-gulp.task('watch', function(){
-    watch(config.scssDir + '/**/*.scss', function(){
-        gulp.start('style');
-    });
+gulp.task('js-sync', ['compress'], function(){
+    sync.reload();
 });
+
+gulp.task('browsersync', ['compress', 'style'], function(){
+    sync.init({
+        proxy: "tutorialgulp.dev",
+        browser: "google chrome"
+    });
+
+    gulp.watch('./*.html').on('change', sync.reload);
+    gulp.watch(config.scssDir + '/**/*.scss', ['style']);
+    gulp.watch(config.jsDir + '/*.js', ['js-sync']);
+});
+
+// gulp.task('watch', function(){
+//     watch(config.scssDir + '/**/*.scss', function(){
+//         gulp.start('style');
+//     });
+// });
+
