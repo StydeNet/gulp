@@ -42,12 +42,14 @@ Los iconos utilizados en las muestras son cortesia de https://roundicons.com. La
 *   [                        Curso básico de Eloquent ORM                    ](https://styde.net/curso-basico-de-eloquent-orm-con-laravel-5-1/)
 *   [                        Crea una aplicación con Laravel 5                    ](https://styde.net/curso-crea-aplicaciones-con-laravel-5/)
 *   [                        Curso de Laravel 5.1                    ](https://styde.net/curso-introductorio-laravel-5-1/)
- **Laravel y PHP avanzado**
+
+**Laravel y PHP avanzado**
 *   [                        Curso de administración de servidores para PHP y Laravel                    ](https://styde.net/curso-configuracion-administracion-de-servidores-php-laravel/)
 *   [                        Curso avanzado de Eloquent ORM                    ](https://styde.net/curso-avanzado-de-eloquent-orm/)
 *   [                        Crea componentes para PHP                    ](https://styde.net/curso-crea-componentes-para-php-y-laravel/)
 *   [                        Interfaces dinámicas con Laravel y jQuery                    ](https://styde.net/curso-de-interfaces-dinamicas-con-laravel-y-jquery/)
- **Otras tecnologías**
+
+**Otras tecnologías**
 *   [                        Curso de Vue.js                    ](https://styde.net/curso-de-vue-js/)
 
 © 2015 Styde.net
